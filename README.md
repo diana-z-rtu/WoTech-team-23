@@ -12,6 +12,9 @@
 - Github 🐱
 - Replit 🦎
 - Google colab 👯‍♀️
+- Discord
+- IntelliJ IDEA 
+- tbc
 
 
 ## Meet Team: Multi-Tasking Moms and One Power Researcher!
