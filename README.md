@@ -1,6 +1,25 @@
 # WoTech-team-23
 team-23 outcomes and codes
 
+
+# Welcome to WotechTeam46 🚀
+## Our team and main contributors 😎
+- Diana
+- Maarija
+- Kristi
+- Oksana
+
+## Our skills
+- Java 🌟
+- Python 🐍
+- Github 🐱
+- Replit 🦎
+- Google colab 👯‍♀️
+## Our best projects
+- tbc 😊
+
+### WE ARE ...
+
 Team rules:
 
 We introduce ourselves in the new team
