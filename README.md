@@ -1,10 +1,10 @@
 # Wellcome to WoTech-team-23
 
 ## Our team and main contributors 😎
-- Diana
-- Maarija
-- Kristi
-- Oksana
+🌸 Diana
+🌸 Maarija
+🌸 Kristi
+🌸 Oksana
 
 ## Our skills
 - Java 🌟
