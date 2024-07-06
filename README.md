@@ -1,4 +1,4 @@
-# Wellcome to WoTech-team-23
+# Welcome to WoTech-team-23
 
 ## Our team and main contributors 😎
 🌸 Diana
