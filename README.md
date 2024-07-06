@@ -1,8 +1,5 @@
-# WoTech-team-23
-team-23 outcomes and codes
+# Wellcome to WoTech-team-23
 
-
-# Welcome to WotechTeam46 🚀
 ## Our team and main contributors 😎
 - Diana
 - Maarija
