@@ -14,7 +14,7 @@
 - Google colab 👯‍♀️
 
 
-##👶 Meet Team Multi-Tasking Moms and One Power Researcher!
+## Meet Team Multi-Tasking Moms and One Power Researcher!
 
 👩‍🍼 First Up: Our Tallinn Superstar Maarja! She's 34, originally from Estonia, and currently juggling the joys and challenges of a 6-week-old infant who demands a lot of attention. Between diaper changes and sleepless nights, she’s also finding time to rock this course!
 
