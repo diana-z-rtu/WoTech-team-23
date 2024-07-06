@@ -2,7 +2,7 @@
 team-23 outcomes and codes
 
 Team rules:
-We introduce ourselves in the new team
+\nWe introduce ourselves in the new team
 We select a team lead
 Team lead makes a GitHub repo
 We all together make a README.md file describing our team and the project
