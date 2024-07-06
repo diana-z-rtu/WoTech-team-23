@@ -17,7 +17,7 @@
 
 ### WE ARE ...
 
-Team rules:
+## Team rules:
 
 We introduce ourselves in the new team
 
@@ -31,8 +31,7 @@ Every team member contributes to that repo directly or through pull requests
 
 We support each other and our activities will be registered in GitHub
 
-
-Terms "push", "pull", "commit", and "add" refer to specific actions that manage changes to your code. Here’s a simple explanation of each term:
+### Terms "push", "pull", "commit", and "add" refer to specific actions that manage changes to your code. Here’s a simple explanation of each term:
 
 1. Add
 What it means: Adding means to stage your changes. This prepares your changes to be committed.
