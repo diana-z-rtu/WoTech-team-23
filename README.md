@@ -15,7 +15,15 @@
 ## Our best projects
 - tbc 😊
 
-### WE ARE ...
+👶 Meet Team Multi-Tasking Moms and One Power Researcher!
+
+👩‍🍼 First Up: Our Tallinn Superstar Maarja! She's 34, originally from Estonia, and currently juggling the joys and challenges of a 6-week-old infant who demands a lot of attention. Between diaper changes and sleepless nights, she’s also finding time to rock this course!
+
+👧👦 Next: The Rae Village Dynamo! Hailing from Harjumaa, this 32-year-old supermom Kristi is raising a lively duo—a 7-year-old girl and a 5-year-old boy. When she’s not breaking up sibling squabbles, she’s breaking down coding problems like a pro!
+
+🔋 From Estonia to Latvia: Diana - The Powerhouse Researcher from Riga! She’s diving deep into the energy field at Riga Technical University. With some Python and pandas experience under her belt, she's here to supercharge her IT and programming skills. Watch out world, she's ready to electrify this course!
+
+Together, they're a formidable team balancing motherhood and career aspirations, proving that multitasking is their middle name. Let's give it up for this incredible quartet of coding queens! 🎉💻👩‍👧‍👦
 
 ## Team rules:
 
