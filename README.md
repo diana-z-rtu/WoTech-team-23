@@ -2,7 +2,7 @@
 
 ## Our team and main contributors 😎
 🌸 Diana
-🌸 Maarija
+🌸 Maarja
 🌸 Kristi
 🌸 Oksana
 
