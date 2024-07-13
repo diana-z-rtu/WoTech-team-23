@@ -23,6 +23,8 @@
 
 👧👦 Next: The Rae Village Dynamo! Hailing from Harjumaa, this 32-year-old supermom Kristi is raising a lively duo—a 7-year-old girl and a 5-year-old boy. When she’s not breaking up sibling squabbles, she’s breaking down coding problems like a pro!
 
+👩‍💼 Meet the Valga Virtuoso! Juggling numbers and nurturing dreams, she hails from Valga and has a rich background in accounting and HR across diverse fields. Currently, she’s mastering the art of balance while raising two kids and handling a new job 90km away—thankfully, remote work is her savior! As if that’s not enough, she’s diving into coding and gearing up for a big move at the end of summer. 🤪
+
 🔋 From Estonia to Latvia: Diana - The Powerhouse Researcher from Riga! She’s diving deep into the energy field at Riga Technical University. With some Python and pandas experience under her belt, she's here to supercharge her IT and programming skills. Watch out world, she's ready to electrify this course!
 
 Together, they're a formidable team balancing motherhood and career aspirations, proving that multitasking is their middle name. Let's give it up for this incredible quartet of coding queens! 🎉💻👩‍👧‍👦
