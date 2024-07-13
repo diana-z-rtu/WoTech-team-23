@@ -1,10 +1,8 @@
 # Welcome to WoTech-team-23
 
-Hi, girls! Am I blind or our team in Discord is disapeard?? we should have done our own group, so please add your e-mail again so one of us could make a new group (23) in discord 😊
-
 ## Our team and main contributors 😎
 🌸 Diana
-🌸 Maarja (maarja.kollom@gmail.com)
+🌸 Maarja 
 🌸 Kristi
 🌸 Oksana
 
