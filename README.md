@@ -4,7 +4,7 @@ Hi, girls! Am I blind or our team in Discord is disapeard?? we should have done 
 
 ## Our team and main contributors 😎
 🌸 Diana
-🌸 Maarja
+🌸 Maarja (maarja.kollom@gmail.com)
 🌸 Kristi
 🌸 Oksana
 
