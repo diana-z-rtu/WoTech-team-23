@@ -1,0 +1,44 @@
+
+```
+@PostMapping("/checkfunding")
+    public Funds checkfunding(@RequestBody Vault vault){//username+pin
+
+    if (vault.username.equals("boss") && vault.pin.equals("5555")){
+        var transaction1 = new Funds();
+        transaction1.sum = 120000;
+        transaction1.sender = "ISL";
+        var transaction2 = new Funds();
+        transaction2.sum = 100000;
+        transaction2.sender = "ERA";
+        if (vault.action.equals("1")){
+            return transaction1;
+        }
+        if (vault.action.equals("2")){
+            return transaction2;
+        }
+        
+    }
+        // postman body raw {"username": "boss","pin": "5555", "action":1 or 2}
+    return null; // otherwise return nothing
+}
+```
+Vault.java
+```
+package com.datorium.Datorium.API;
+
+public class Vault {
+    public String username;
+    public String pin;
+    public String action;
+}
+```
+Funds.java
+```
+package com.datorium.Datorium.API;
+
+public class Funds {
+    public float sum;
+    public String sender;
+
+}
+```
