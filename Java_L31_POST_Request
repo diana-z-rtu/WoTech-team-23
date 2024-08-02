@@ -1,4 +1,3 @@
-
 ```
 @PostMapping("/checkfunding")
     public Funds checkfunding(@RequestBody Vault vault){//username+pin
