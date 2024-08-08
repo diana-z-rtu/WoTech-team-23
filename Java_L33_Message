@@ -1,0 +1,57 @@
+MessageController.java
+
+```
+package com.datorium.Datorium.API.Controllers;
+
+import com.datorium.Datorium.API.DTO.Message;
+import com.datorium.Datorium.API.Services.MessageService;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/user")
+public class MessageController {
+    private MessageService messageService;
+    public MessageController(){
+    messageService = new MessageService();
+    }
+
+    @PostMapping("/msg")
+    public String add(@RequestBody Message message){
+        return messageService.add(message);
+    }
+}
+```
+
+MessageService.java
+```
+package com.datorium.Datorium.API.Services;
+
+import com.datorium.Datorium.API.DTO.Message;
+
+public class MessageService {
+
+    public String add(Message message){
+        return "Hi";
+    }
+}
+```
+
+Message.java
+```
+package com.datorium.Datorium.API.DTO;
+
+public class Message {
+    public String message;
+}
+```
+
+Postman:
+POST method
+localhost:8080/user/msg
+Body-raw-JSON:
+{"message": "Hello"}
+
+Outcome should be: Hi
