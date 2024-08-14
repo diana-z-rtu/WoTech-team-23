@@ -1,0 +1,18 @@
+In UserController:
+
+@GetMapping("/all")
+    public ArrayList<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
+    
+In UserService:
+
+public ArrayList<User> getAllUsers() {
+        return userRepo.getAllUsers();
+    }
+
+In UserRepo:
+
+public ArrayList<User> getAllUsers() {
+        return users;
+    }
