@@ -1,6 +1,6 @@
-## Controller
+Controller
 
-``` 
+```java
 package com.datorium.Datorium.API.Controller;
 
 import com.datorium.Datorium.API.DTOs.User;
@@ -35,8 +35,8 @@ public class UserController {
     }
 }
 ```     
-## UserService:
-```
+UserService:
+```java
 package com.datorium.Datorium.API.Services;
 
 import com.datorium.Datorium.API.DTOs.User;
@@ -60,8 +60,9 @@ public class UserService {
     }
 }
 ```
-## UserRepo:
-```
+
+UserRepo:
+```java
 package com.datorium.Datorium.API.Repo;
 
 import com.datorium.Datorium.API.DTOs.User;
