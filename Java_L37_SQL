@@ -1,0 +1,48 @@
+1. Calculate total Sales by City
+
+SELECT o.City, SUM(pr.Price) AS TotalSales
+FROM Sales s 
+JOIN Pets p ON s.PetID = p.PetID
+JOIN Owners o ON p.OwnerID = o.OwnerID
+JOIN Procedures pr ON s.ProcedureCode = pr.ProcedureCode
+GROUP BY o.City;
+
+2. Calculate total Sales by Pet Kind
+
+SELECT p.Kind AS PetKind, SUM(pr.Price) AS TotalSales
+FROM Sales s
+JOIN Pets p ON s.PetID = p.PetID
+JOIN Procedures pr ON s.ProcedureCode = pr.ProcedureCode
+GROUP BY p.Kind;
+
+3. Calculate total Sales by City and Pet Kind
+
+SELECT o.City AS City, p.Kind AS PetKind, SUM(pr.Price) AS TotalSales
+FROM Sales s
+JOIN Pets p ON s.PetID = p.PetID
+JOIN Owners o ON p.OwnerID = o.OwnerID
+JOIN Procedures pr ON s.ProcedureCode = pr.ProcedureCode
+GROUP BY o.City, p.Kind;
+
+4. Calculate Average sales by City
+
+-- Calculate the total sales for each city
+WITH CityTotals AS (
+    SELECT o.City AS City, SUM(pr.Price) AS TotalSales
+    FROM Sales s
+    JOIN Pets p ON s.PetID = p.PetID
+    JOIN Owners o ON p.OwnerID = o.OwnerID
+    JOIN Procedures pr ON s.ProcedureCode = pr.ProcedureCode
+    GROUP BY o.City)
+
+-- Compute the average sales across all cities
+SELECT AVG(TotalSales) AS AverageSales
+FROM CityTotals;
+
+-- average sales of each city
+SELECT o.City AS City, AVG(pr.Price) AS AverageSales
+FROM Sales s
+JOIN Pets p ON s.PetID = p.PetID
+JOIN Owners o ON p.OwnerID = o.OwnerID
+JOIN Procedures pr ON s.ProcedureCode = pr.ProcedureCode
+GROUP BY o.City;
