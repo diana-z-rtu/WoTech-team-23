@@ -1,0 +1,105 @@
+CheeseShopController.java
+package com.datorium.Datorium.API.Controllers;
+
+import com.datorium.Datorium.API.DTO.Item;
+import com.datorium.Datorium.API.DTO.UpdateItemDTO;
+import com.datorium.Datorium.API.Services.CheeseShopService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+
+@RestController
+@RequestMapping("/Cheese-shop")
+public class CheeseShopController {
+    private CheeseShopService cheeseShopService;
+
+    public CheeseShopController() {
+        cheeseShopService = new CheeseShopService();
+    }
+
+    @PostMapping("/add")
+    public int addItem(@RequestBody Item item) {
+        return cheeseShopService.addItem(item);
+    }
+
+    @PostMapping("/update")
+    public Item updateItem(@RequestBody UpdateItemDTO updateItemDTO){
+        return cheeseShopService.update(updateItemDTO.itemIndex, updateItemDTO.item);
+
+    }
+    @GetMapping("/get")
+    public ArrayList<Item> getItems() {
+        return cheeseShopService.getItems();
+    }
+}
+
+Item.java (in DTO)
+package com.datorium.Datorium.API.DTO;
+
+public class Item {
+    public String name;
+}
+
+UpdateItemDTO.java (in DTO)
+package com.datorium.Datorium.API.DTO;
+
+public class UpdateItemDTO {
+    public Item item;
+    public int itemIndex;
+}
+
+CheeseShopRepository.java
+package com.datorium.Datorium.API.Repo;
+
+import com.datorium.Datorium.API.DTO.Item;
+
+import java.util.ArrayList;
+
+public class CheeseShopRepository {
+
+    private ArrayList<Item> items = new ArrayList<>();
+
+    public int addItem(Item item){
+        items.add(item);
+        return items.size();
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public Item update(int itemIndex, Item updateItemDTO){
+        var item = items.get(itemIndex);
+        item.name = updateItemDTO.name;
+        return item;
+    }
+}
+
+CheeseShopService.java
+
+package com.datorium.Datorium.API.Services;
+
+import com.datorium.Datorium.API.DTO.Item;
+import com.datorium.Datorium.API.Repo.CheeseShopRepository;
+
+import java.util.ArrayList;
+
+public class CheeseShopService {
+    private CheeseShopRepository cheeseShopRepository;
+
+    public CheeseShopService(){
+        cheeseShopRepository = new CheeseShopRepository();
+    }
+
+    public int addItem(Item item){
+        return cheeseShopRepository.addItem(item);
+    }
+
+    public ArrayList<Item> getItems() {
+        return cheeseShopRepository.getItems();
+    }
+
+    public Item update(int itemIndex, Item updateItemDTO){
+        return cheeseShopRepository.update(itemIndex, updateItemDTO);
+    }
+}
