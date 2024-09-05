@@ -18,7 +18,7 @@ public class UserRepo {
 
     private ArrayList<User> users = new ArrayList<>();
 
-    public int add(User user) {
+    public void add(User user) {
         //users.add(user);
         //return users.size();
         users.add(user);
@@ -33,7 +33,6 @@ public class UserRepo {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-        return 0;
     }
 
     public ArrayList<User> getUsers() {
@@ -44,6 +43,80 @@ public class UserRepo {
         var user = users.get(userIndex);
         user.name = updateUserDTO.name;
         return user;
+    }
+}
+```
+
+UserService.java
+```
+package com.datorium.Datorium.API.Services;
+
+import com.datorium.Datorium.API.DTO.User;
+import com.datorium.Datorium.API.Repo.UserRepo;
+
+import java.util.ArrayList;
+
+public class UserService {
+    private UserRepo userRepo;
+
+    public UserService(){
+        userRepo = new UserRepo();
+    }
+
+    public void add(User user){
+        userRepo.add(user);
+    }
+
+    public ArrayList<User> getUsers() {
+        return userRepo.getUsers();
+    }
+
+    public User update(int userIndex, User updateUserDTO){
+        return userRepo.update(userIndex, updateUserDTO);
+    }
+}
+```
+
+UserController.java
+```
+package com.datorium.Datorium.API.Controllers;
+
+import com.datorium.Datorium.API.DTO.UpdateUserDTO;
+import com.datorium.Datorium.API.DTO.User;
+import com.datorium.Datorium.API.Services.UserService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+
+@RestController
+@RequestMapping("/user")
+public class UserController {
+    private UserService userService;
+
+    public UserController() {
+        userService = new UserService();
+        //This code runs first, when creating UserController object
+    }
+    //CRUD
+    //AddUser
+    //UpdateUser
+    //GetUser
+    //DeleteUser
+
+    @PostMapping("/add") //localhost:8080/user/add
+    public void add(@RequestBody User user) {
+        userService.add(user);
+    }
+
+    @GetMapping("/all")
+    public ArrayList<User> getUsers() {
+        return userService.getUsers();
+    }
+
+    @PostMapping("/update")
+    public User update(@RequestBody UpdateUserDTO updateUserDTO){
+        return userService.update(updateUserDTO.userIndex, updateUserDTO.user);
+
     }
 }
 ```
