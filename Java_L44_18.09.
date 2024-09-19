@@ -1,1 +1,89 @@
+MathService.java
+```
+package com.datorium.Datorium.API;
+
+public class MathService {
+    public int getSum(int first, int second) {
+        int getSum = first + second;
+        if (getSum > 100) {
+            return 0;
+        }
+        return getSum;
+    }
+}
+
+```
+DatoriumAPIApplication.java
+```
+package com.datorium.Datorium.API;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+@CrossOrigin
+public class DatoriumApiApplication {
+
+	public static void main(String[] args) {
+		var userService = new UserService();
+		System.out.println(userService.getFullName("Oskars", "Klaumanis"));
+
+		var mathService = new MathService();
+		System.out.println(mathService.getSum(10, 5));
+
+		SpringApplication.run(DatoriumApiApplication.class, args);
+	}
+}
+```
+
+DatoriumApiApplicationTests.java
+```
+package com.datorium.Datorium.API;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.Assert;
+
+@SpringBootTest
+class DatoriumApiApplicationTests {
+
+	@Test
+	void WHEN_NamIsOskarsAndSurnameIsKlaumanis_THEN_Result_Oskars_Klaumanis() {
+		//Arrange - prepare data and services
+		var userService = new UserService();
+
+		//Act - do some actiom, usually called method
+		var fullname = userService.getFullName("Oskars", "Klaumanis");
+
+		//Assert - test wether or not the reult is correct
+		Assert.isTrue(fullname.equals("Oskars Klaumanis"), "Hey, the name should be with a space in between and should contain both name and surname");
+	}
+	@Test
+	void WHEN_GetSumIsBelowOneHndred_THEN_Result_getSum() {
+		//Arrange - prepare data and services
+		var mathService = new MathService();
+
+		//Act - do some actiom, usually called method
+		var getSum = mathService.getSum(10, 5);
+
+		//Assert - test wether or not the reult is correct
+		Assert.isTrue(getSum == 15, "The sum is lower than 100");
+	}
+	@Test
+	void WHEN_GetSumIsOverHundred_THEN_Result_0() {
+		//Arrange - prepare data and services
+		var mathService = new MathService();
+
+		//Act - do some actiom, usually called method
+		var getSum = mathService.getSum(10, 100);
+
+		//Assert - test wether or not the reult is correct
+		Assert.isTrue(getSum == 0,"Hi, I want to be able to get a sum of 2 numbers, but if the sum is above 100, then I want to receive 0 instead." );
+	}
+}
+````
 
