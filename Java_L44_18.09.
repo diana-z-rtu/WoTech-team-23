@@ -13,7 +13,7 @@ public class MathService {
 }
 
 ```
-DatoriumAPIApplication.java
+DatoriumApiApplication.java
 ```
 package com.datorium.Datorium.API;
 
