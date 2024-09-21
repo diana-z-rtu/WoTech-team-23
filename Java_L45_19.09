@@ -1,0 +1,71 @@
+GuessNumberService.java
+```
+package com.datorium.Datorium.API;
+
+public class GuessNumberService {
+    public int randomNumber;
+    public void setRandomNumber(int number) {
+        this.randomNumber = number;
+    }
+
+    public int takeAGuess(int guess) {
+        if (guess > randomNumber) {
+            return 3;
+        } else if (guess < randomNumber) {
+            return 2;
+        } else {
+            return 1;
+        }
+    }
+}
+```
+
+GuessNumberTests.java
+```
+package com.datorium.Datorium.API;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.util.Assert;
+
+public class GuessNumberTests {
+
+    @Test
+    void WHEN_GuessNumberIsBigger_THEN_Return_3() {
+        // Arrange
+        var game = new GuessNumberService();
+        game.setRandomNumber(5);
+
+        // Act
+        var response = game.takeAGuess(20);
+
+        // Assert
+        Assert.isTrue(response == 3, "It's supposed to be 3");
+    }
+
+    @Test
+    void WHEN_GuessNumberIsSmaller_THEN_Return_2() {
+        // Arrange
+        var game = new GuessNumberService();
+        game.setRandomNumber(5);
+
+        // Act
+        var response = game.takeAGuess(3);
+
+        // Assert
+        Assert.isTrue(response == 2, "It's supposed to be 2");
+    }
+
+    @Test
+    void WHEN_GuessNumberIsGuessed_THEN_Return_1() {
+        // Arrange
+        var game = new GuessNumberService();
+        game.setRandomNumber(5);
+
+        // Act
+        var response = game.takeAGuess(5);
+
+        // Assert
+        Assert.isTrue(response == 1, "It's supposed to be 1");
+    }
+}
+```
