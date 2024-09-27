@@ -1,0 +1,107 @@
+Simulate a 1D simple random walk where at each step can be moving only up or down. How many steps
+
+option 1
+```py
+steps = 1000
+x = np.zeros(steps)
+y = np.zeros(steps)
+sum_up = 0
+sum_down = 0
+
+# the first point
+x[0] = 0
+y[0] = 0
+
+# 1D random walk
+
+for step in range(1, steps):
+    up_down_direction = random.randint(1, 2)
+    if up_down_direction == 1:
+        x[step] = x[step - 1] + 1
+        y[step] = y[step - 1] + 1
+        sum_up += 1
+    else:
+        x[step] = x[step - 1] + 1
+        y[step] = y[step - 1] - 1
+        sum_down += 1
+
+# the graph with different colors above and below zero
+plt.figure(figsize=(10, 6))
+
+for step in range(1, steps):
+    if y[step] > 0:
+        plt.plot([x[step-1], x[step]], [y[step-1], y[step]], color='red', lw=2)
+    elif y[step] < 0:
+        plt.plot([x[step-1], x[step]], [y[step-1], y[step]], color='blue', lw=2)
+    else:
+        plt.plot([x[step-1], x[step]], [y[step-1], y[step]], color='darkred', lw=2)
+
+plt.title('1D random walk', fontsize=16)
+plt.xlabel('Step')
+plt.ylabel('Position')
+plt.grid(True)
+
+plt.text(0.05 * steps, np.min(y) + 0.1 * (np.max(y) - np.min(y)), 
+         f'Ups: {sum_up}\nDowns: {sum_down}', 
+         fontsize=12, bbox=dict(facecolor='white', alpha=0.5))
+plt.show()
+
+```
+
+option2
+```py
+steps = 1000  
+# np.random.seed(0)  # For reproducibility
+
+# 1D Random Walk Simulation
+X = np.cumsum(np.random.choice([-1, 1], size=steps))
+
+# Color list ups are red and downs are blue
+colors = ['red' if X[step_num] > X[step_num-1] else 'blue' for step_num in range(1, steps)]
+
+
+# Plotting the 1D random walk
+plt.figure(figsize=(10, 6))
+
+for step_num in range(1, steps):
+    plt.plot([step_num-1, step_num], [X[step_num-1], X[step_num]], color=colors[step_num-1], lw=2, alpha = 0.7)
+
+plt.title('1D Random Walk', fontsize=16)
+plt.xlabel('Step')
+plt.ylabel('Position')
+plt.grid(True)
+
+# Count the number of ups and downs
+ups = np.sum(np.diff(X) > 0)
+downs = np.sum(np.diff(X) < 0)
+
+plt.text(0.05 * steps, np.min(X) + 0.1 * (np.max(X) - np.min(X)),
+         f'Ups: {ups}\nDowns: {downs}',
+         fontsize=12, bbox=dict(facecolor='white', alpha=0.5))
+plt.show()
+
+```
+without different colors:
+```py
+steps = 1000  
+
+X = np.cumsum(np.random.choice([-1, 1], size=steps))
+
+plt.figure(figsize=(10, 6))
+plt.plot(np.arange(steps), X, color='blue', lw=2, alpha=0.7)
+
+plt.title('1D Random Walk', fontsize=16)
+plt.xlabel('Step')
+plt.ylabel('Position')
+plt.grid(True)
+
+# Count the number of ups and downs
+ups = np.sum(np.diff(X) > 0)
+downs = np.sum(np.diff(X) < 0)
+
+print(f'Ups: {ups}, Downs: {downs}')
+
+plt.show()
+```
+
+
